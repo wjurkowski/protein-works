@@ -1,0 +1,15 @@
+script replaces occupancy and beta values with new taken from input file
+
+replace_beta6.pl pdb_file values params 2
+
+parameters:
+	beta
+		=1 replace beta factors 
+		=2 replace occupancy and beta factors
+
+	as_beta - number of column to take beta factor replacment
+	as_occup - number of column to take occupancy replacement
+	normalized
+		=! 1 values not normalized (default) 
+		=1 values normalized
+

@@ -1,0 +1,3 @@
+nr_only	0
+take_hetatm 0
+run_dir trans-alfa

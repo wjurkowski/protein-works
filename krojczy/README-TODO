@@ -1,0 +1,24 @@
+Program wczytuje liste bialek do pokrojenia oraz liste bialek non red (2 wersje formatu: blast i cd-hit).
+Kroi bialka na lancuchy i zapisuje:
+	- wszystkie
+	- tylko nonred
+
+[Wersja 12]
+- poprawa nazewnictwa lancuchow z kodpdb.pdb_chid na kodpdb_chid.pdb dla nr_only=1
+
+[Wersja 13]
+- poprawa nazewnictwa lancuchow z kodpdb.pdb_chid na kodpdb_chid.pdb dla nr_only=0
+- dodanie $run_dir - mozna wykonywac gdzi sie chce wzgledem zbioru plikow pdb
+
+[Wersja 14]
+- wycina tylko te wskazane na liscie (np. po wyszukiwaniu w PDB)
+
+[Wersja 15]
+- domyslnie nie potrzebuje pliku z lancuchami nonredundant
+
+[Wersja 16]
+-uporzadkowany kod
+
+TODO:
+- modele: bierz pierwszy
+-bledy w cieciu jesli nastepny lancuch (po TER) ma ten sam identyfikator
