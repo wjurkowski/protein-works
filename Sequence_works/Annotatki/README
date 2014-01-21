@@ -1,0 +1,8 @@
+#copy sequences and run psiblast for targets
+annotatki.pl
+
+#split multifasta, create db of profiles chk, create mtx and format it
+create_profile_db.pl
+
+#run jobs on cluster
+setup.sh
