@@ -1,0 +1,79 @@
+#include <libgen.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <math.h>
+
+
+#define LINELEN 79
+
+struct residue
+{
+	unsigned long resnum;
+	char* resname;
+	
+	struct residue* next;
+};
+
+typedef struct residue residue;
+
+struct contact
+{
+	unsigned long resnum;
+	unsigned short int hits;
+	char* resname;
+	char* element;
+	char* name;
+	unsigned long number;
+
+	struct contact* next;
+};
+
+typedef struct contact contact;
+
+struct atom
+{
+	unsigned long number;
+	unsigned long resnum;
+	unsigned long nocontacts;
+	double x, y, z;
+	char* name;
+	char* resname;
+	char* element;
+	contact* contacts;
+	
+	struct atom* next;
+};
+
+typedef struct atom atom;
+
+struct ligand
+{
+	unsigned long number;
+	unsigned long noatoms;
+	unsigned long noresidues;
+	double cx, cy, cz;
+	double radius;
+	char* name;
+	char* owner;
+	atom* atoms;
+	residue* residues;
+
+	struct ligand* next;
+};
+
+typedef struct ligand ligand;
+
+unsigned short int get_atom(atom*, char*);
+unsigned short int is_near_ligand(ligand*, atom*, double);
+unsigned short int is_on_residue_list(ligand*, atom*);
+long find_atom_section(FILE*);
+long get_protein(atom*, FILE*);
+long get_ligand(ligand*, unsigned long, char*, FILE*);
+double distance(atom*, atom*);
+void find_center(ligand*);
+void find_near_calpha(ligand*, atom*, double);
+void find_contacts(ligand*, atom*, double);
+char* ext(char*, char*);
+void ligand_result(ligand*);
+void protein_result(ligand*, unsigned int, char*, double, double);
