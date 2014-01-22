@@ -1,0 +1,7 @@
+create_profile_db1.pl - working version for psiblast chk (ta wersja jest w katalogach edict jako create_profile_db.pl)
+create_profile_db2.pl - split very large fasta files
+create_profile_db5.pl - translates chk to mtx
+create_profile_db6.pl - dodana mozliwosc sciagania plikow fasta; wersje ab: - drobne edycje
+create_profile_db7.pl - tworzona finalna duza baza (zawierajaca wszystkie rekordy), przyspieszenie dzialania poprzez nie formatowanie pojedynczych rekordow przed polaczeniem (bo i tak nie sa wykorzystane)
+	makemat nie uzywa skalowania -S 1
+
